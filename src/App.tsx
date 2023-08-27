@@ -1,5 +1,6 @@
 import { MouseEvent, useEffect, useState } from 'react';
 import Button from './components/Button/Button';
+import Input from './components/Input/Input';
 
 function App() {
 	// tuple
@@ -12,7 +13,11 @@ function App() {
 
 	return (
 		<>
-			<Button onClick={() => setCounter(2) /* addCounter */}>Bouton</Button>
+			<Button onClick={/* () => setCounter(2)  */ addCounter}>Bouton</Button>
+			<Button appearance='big' onClick={/* () => setCounter(2)  */ addCounter}>
+				Bouton
+			</Button>
+			<Input placeholder='Email' />
 		</>
 	);
 }

@@ -20,10 +20,10 @@ import cn from 'classnames';
 
 export default Button; */
 
-function Button({ children, className, ...props }: ButtonProps) {
+function Button({ children, className, appearance = 'small', ...props }: ButtonProps) {
 	return (
 		<button
-			className={cn(styles['button'], styles['accent'], className)}
+			className={cn(styles['button'], styles['accent'], className, {[styles['small']]: appearance === 'small', [styles['big']]: appearance === 'big'})}
 			{...props}
 		>
 			{children}
