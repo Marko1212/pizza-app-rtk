@@ -4,12 +4,33 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 import { Product } from '../../interfaces/product.interface';
 import styles from './Menu.module.css';
 import { PREFIX } from '../../helpers/API';
+import axios, { AxiosError } from 'axios';
 
 export function Menu() {
 	const [products, setProducts] = useState<Product[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [error, setError] = useState<string | undefined>();
 
 	const getMenu = async () => {
 		try {
+			setIsLoading(true);
+			await new Promise<void>((resolve) => {
+				setTimeout(() => {
+					resolve();
+				}, 2000);
+			});
+			const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
+			setProducts(data);
+			setIsLoading(false);
+		} catch(e) {
+			console.error(e);
+			if (e instanceof AxiosError) {
+				setError(e.message);
+			}
+			setIsLoading(false);
+			return;
+		}
+		/* try {
 			const res = await fetch(`${PREFIX}/products`);
 			if (!res.ok) {
 				return;
@@ -20,7 +41,7 @@ export function Menu() {
 		} catch (e) {
 			console.error(e);
 			return;
-		}
+		} */
 	};
 
 	useEffect(() => {
@@ -33,7 +54,8 @@ export function Menu() {
 				<Heading>Menu</Heading>
 			</div>
 			<div>
-				{products.map((p) => (
+				{error && <>{error}</>}
+				{!isLoading && products.map((p) => (
 					<ProductCard
 						key={p.id}
 						id={p.id}
@@ -44,6 +66,7 @@ export function Menu() {
 						image={p.image}
 					/>
 				))}
+				{isLoading && <>On charge les produits...</>}
 			</div>
 		</>
 	);
