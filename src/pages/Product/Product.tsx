@@ -5,3 +5,4 @@ export function Product() {
 
 	return <>Product - {id}</>;
 }
+
