@@ -45,7 +45,7 @@ export function Layout() {
 					Sortie
 				</Button>
 			</div>
-			<div>
+			<div className={styles.content}>
 				<Outlet />
 			</div>
 		</div>
