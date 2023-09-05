@@ -1,52 +1,87 @@
 {
-	"products": [
-		{
-			"id": 1,
-			"name": "Un vrai plaisir",
-			"price": 13,
-			"ingredients": ["salami", "roquette", "tomates", "olives"],
-			"image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png",
-			"rating": 4.7
-		},
-		{
-			"id": 2,
-			"name": "Tacos",
-			"price": 12,
-			"ingredients": ["piments", "viande hachée", "pain"],
-			"image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png",
-			"rating": 4.8
-		},
-		{
-			"id": 3,
-			"name": "Très piquante",
-			"price": 14,
-			"ingredients": ["sauce piquante", "champignons", "tomates", "olives"],
-			"image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png",
-			"rating": 4.9
-		},
-		{
-			"id": 4,
-			"name": "Gratin dauphinois",
-			"price": 15,
-			"ingredients": ["pommes de terre", "fromage", "poivre", "viande hachée"],
-			"image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png",
-			"rating": 4.4
-		},
-		{
-			"id": 5,
-			"name": "Salade cesar",
-			"price": 11,
-			"ingredients": ["poulet", "fromage", "sauce Cesar", "tomates"],
-			"image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png",
-			"rating": 4.8
-		},
-		{
-			"id": 6,
-			"name": "Salade verte",
-			"price": 9,
-			"ingredients": ["concombre", "noix", "poivre"],
-			"image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png",
-			"rating": 4.5
-		}
-	]
+  "products": [
+    {
+      "id": 1,
+      "name": "Un vrai plaisir",
+      "price": 13,
+      "ingredients": [
+        "salami",
+        "roquette",
+        "tomates",
+        "olives"
+      ],
+      "image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png",
+      "rating": 4.7
+    },
+    {
+      "id": 2,
+      "name": "Tacos",
+      "price": 12,
+      "ingredients": [
+        "piments",
+        "viande hachée",
+        "pain"
+      ],
+      "image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png",
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "name": "Très piquante",
+      "price": 14,
+      "ingredients": [
+        "sauce piquante",
+        "champignons",
+        "tomates",
+        "olives"
+      ],
+      "image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png",
+      "rating": 4.9
+    },
+    {
+      "id": 4,
+      "name": "Gratin dauphinois",
+      "price": 15,
+      "ingredients": [
+        "pommes de terre",
+        "fromage",
+        "poivre",
+        "viande hachée"
+      ],
+      "image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png",
+      "rating": 4.4
+    },
+    {
+      "id": 5,
+      "name": "Salade cesar",
+      "price": 11,
+      "ingredients": [
+        "poulet",
+        "fromage",
+        "sauce Cesar",
+        "tomates"
+      ],
+      "image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png",
+      "rating": 4.8
+    },
+    {
+      "id": 6,
+      "name": "Salade verte",
+      "price": 9,
+      "ingredients": [
+        "concombre",
+        "noix",
+        "poivre"
+      ],
+      "image": "https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png",
+      "rating": 4.5
+    }
+  ],
+  "users": [
+    {
+      "email": "victor@hugo.fr",
+      "password": "$2a$10$oeT33ivjT.YJJXIXmlDRmufc/MJMYDnnFEM3Z9HZlWSg2sFZc91.W",
+      "id": 1
+    }
+  ]
 }
