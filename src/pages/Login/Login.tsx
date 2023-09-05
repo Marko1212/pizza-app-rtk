@@ -19,6 +19,7 @@ export function Login() {
 					<input
 						id='email'
 						name='email'
+						type='email'
 						placeholder='Email'
 						className={styles['input']}
 					/>
