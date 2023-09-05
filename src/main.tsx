@@ -7,6 +7,9 @@ import { Cart } from './pages/Cart/Cart.tsx';
 import { Error } from './pages/Error/Error.tsx';
 import { Layout } from './layout/Menu/Layout.tsx';
 import { Product } from './pages/Product/Product.tsx';
+import { AuthLayout } from './layout/Auth/AuthLayout.tsx';
+import { Login } from './pages/Login/Login.tsx';
+import { Register } from './pages/Register/Register.tsx';
 
 const router = createBrowserRouter([
 	{
@@ -29,15 +32,15 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/auth',
-		element: <></>,
+		element: <AuthLayout />,
 		children: [
 			{
 				path: 'login',
-				element: <></>
+				element: <Login />
 			},
 			{
 				path: 'register',
-				element: <></>
+				element: <Register />
 			}
 		]
 	},
