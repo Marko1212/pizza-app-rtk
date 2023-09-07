@@ -81,12 +81,14 @@
     {
       "email": "victor@hugo.fr",
       "password": "$2a$10$oeT33ivjT.YJJXIXmlDRmufc/MJMYDnnFEM3Z9HZlWSg2sFZc91.W",
-      "id": 1
+      "id": 1,
+      "name": "Victor Hugo"
     },
     {
       "email": "blaise@pascal.fr",
       "password": "$2a$10$T.6n.IanjPaD3QMdUo.QLeLfB.AZrMZDqgTsfQ2r4sr.zMMv2Njcu",
-      "id": 2
+      "id": 2,
+      "name": "Blaise Pascal"
     }
   ]
 }
