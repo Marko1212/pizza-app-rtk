@@ -16,6 +16,8 @@ export function Product() {
 	const getProduct = async (id: number) => {
 		try {
 			setIsLoading(true);
+			setError(undefined);
+			setProduct(undefined);
 			await new Promise<void>((resolve) => {
 				setTimeout(() => {
 					resolve();

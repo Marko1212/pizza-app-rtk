@@ -14,6 +14,8 @@ export function Menu() {
 	const getMenu = async () => {
 		try {
 			setIsLoading(true);
+			setError(undefined);
+			setProducts([]);
 			await new Promise<void>((resolve) => {
 				setTimeout(() => {
 					resolve();
@@ -22,7 +24,7 @@ export function Menu() {
 			const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
 			setProducts(data);
 			setIsLoading(false);
-		} catch(e) {
+		} catch (e) {
 			console.error(e);
 			if (e instanceof AxiosError) {
 				setError(e.message);
@@ -55,17 +57,19 @@ export function Menu() {
 			</div>
 			<div>
 				{error && <>{error}</>}
-				{!isLoading && products.map((p) => (
-					<ProductCard
-						key={p.id}
-						id={p.id}
-						name={p.name}
-						description={p.ingredients.join(', ')}
-						rating={p.rating}
-						price={p.price}
-						image={p.image}
-					/>
-				))}
+				{!isLoading &&
+					products.length !== 0 &&
+					products.map((p) => (
+						<ProductCard
+							key={p.id}
+							id={p.id}
+							name={p.name}
+							description={p.ingredients.join(', ')}
+							rating={p.rating}
+							price={p.price}
+							image={p.image}
+						/>
+					))}
 				{isLoading && <>On charge les produits...</>}
 			</div>
 		</>
