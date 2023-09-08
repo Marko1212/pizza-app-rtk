@@ -39,7 +39,7 @@ export function Login() {
 	};
 
 	const sendLogin = async (email: string, password: string) => {
-		try {
+/* 		try {
 			const { data } = await axios.post<LoginResponse>(`${PREFIX}/login`, {
 				email,
 				password
@@ -52,7 +52,7 @@ export function Login() {
 				console.log(e);
 				setError(e.response?.data);
 			}
-		}
+		} */
 	};
 
 	return (
