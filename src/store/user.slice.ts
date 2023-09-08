@@ -12,10 +12,12 @@ export interface UserPersistentState {
 
 export interface UserState {
 	jwt: string | null;
+	loginState: null | 'rejected';
 }
 
 const initialState: UserState = {
-	jwt: loadState<UserPersistentState>(JWT_PERSISTENT_STATE)?.jwt ?? null
+	jwt: loadState<UserPersistentState>(JWT_PERSISTENT_STATE)?.jwt ?? null,
+	loginState: null
 };
 
 export const login = createAsyncThunk(
@@ -42,6 +44,12 @@ export const userSlice = createSlice({
 			login.fulfilled,
 			(state, action: PayloadAction<LoginResponse>) => {
 				state.jwt = action.payload.accessToken;
+			}
+		);
+		builder.addCase(
+			login.rejected,
+			(state, action) => {
+				console.log(action);
 			}
 		);
 	}
