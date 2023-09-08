@@ -13,7 +13,7 @@ export function Product() {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
 
-	const getProduct = async (id: number) => {
+	const getProduct = async (identifiant: number) => {
 		try {
 			setIsLoading(true);
 			setError(undefined);
@@ -23,7 +23,7 @@ export function Product() {
 					resolve();
 				}, 2000);
 			});
-			const { data } = await axios.get<Product>(`${PREFIX}/products/${id}`);
+			const { data } = await axios.get<Product>(`${PREFIX}/products/${identifiant}`);
 			setProduct(data);
 			setIsLoading(false);
 		} catch (e) {
