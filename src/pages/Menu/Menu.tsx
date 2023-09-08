@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Heading from '../../components/Heading/Heading';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { Product } from '../../interfaces/product.interface';
-import styles from './Menu.module.css';
 import { PREFIX } from '../../helpers/API';
 import axios, { AxiosError } from 'axios';
 
@@ -52,7 +51,7 @@ export function Menu() {
 
 	return (
 		<>
-			<div className={styles['head']}>
+			<div>
 				<Heading>Menu</Heading>
 			</div>
 			<div>
