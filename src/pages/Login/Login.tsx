@@ -45,7 +45,6 @@ export function Login() {
 				password
 			});
 			console.log(data);
-			localStorage.setItem('jwt', data.accessToken);
 			dispatch(userActions.addJwt(data.accessToken));
 			navigate('/');
 		} catch (e) {
