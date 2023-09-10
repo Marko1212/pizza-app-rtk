@@ -1,6 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { loadState } from './storage';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { LoginResponse } from '../interfaces/auth.interface';
 import { PREFIX } from '../helpers/API';
 
@@ -22,11 +22,17 @@ const initialState: UserState = {
 export const login = createAsyncThunk(
 	'user/login',
 	async (params: { email: string; password: string }) => {
-		const { data } = await axios.post<LoginResponse>(`${PREFIX}/login`, {
-			email: params.email,
-			password: params.password
-		});
-		return data;
+		try {
+			const { data } = await axios.post<LoginResponse>(`${PREFIX}/login`, {
+				email: params.email,
+				password: params.password
+			});
+			return data;
+		} catch (e) {
+			if (e instanceof AxiosError) {
+				throw new Error(e.response?.data);
+			}
+		}
 	}
 );
 
@@ -43,9 +49,13 @@ export const userSlice = createSlice({
 	},
 	extraReducers(builder) {
 		builder.addCase(login.fulfilled, (state, action) => {
+			if (!action.payload) {
+				return;
+			}
 			state.jwt = action.payload.accessToken;
 		});
 		builder.addCase(login.rejected, (state, action) => {
+			console.log(action);
 			state.loginErrorMessage = action.error.message;
 		});
 	}
