@@ -20,10 +20,12 @@ export type LoginForm = {
 };
 
 export function Login() {
-	const [error, setError] = useState<string | null>();
+	/* const [error, setError] = useState<string | null>(); */
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
-	const jwt = useSelector((s: RootState) => s.user.jwt);
+	/* const jwt = useSelector((s: RootState) => s.user.jwt);
+	const loginErrorMessage = useSelector((s: RootState) => s.user.loginErrorMessage); */
+	const { jwt, loginErrorMessage } = useSelector((s: RootState) => s.user);
 
 	useEffect(() => {
 		if (jwt) {
@@ -33,7 +35,7 @@ export function Login() {
 
 	const submit = async (e: FormEvent) => {
 		e.preventDefault();
-		setError(null);
+		dispatch(userActions.clearLoginError());
 		const target = e.target as typeof e.target & LoginForm;
 		/* 		const email = target.email.value;
 		const password = target.password.value;
@@ -66,7 +68,7 @@ export function Login() {
 	return (
 		<div className={styles['login']}>
 			<Heading>Connexion</Heading>
-			{error && <div className={styles.error}>{error}</div>}
+			{loginErrorMessage && <div className={styles.error}>{loginErrorMessage}</div>}
 			<form className={styles['form']} onSubmit={submit}>
 				<div className={styles['field']}>
 					<label htmlFor='email'>Votre email</label>
