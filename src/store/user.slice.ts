@@ -87,6 +87,7 @@ const userSlice = createSlice({
 	},
 	extraReducers(builder) {
 		builder.addCase(login.fulfilled, (state, action) => {
+			console.log(action);
 			if (!action.payload) {
 				return;
 			}
