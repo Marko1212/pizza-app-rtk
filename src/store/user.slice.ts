@@ -71,7 +71,7 @@ export const getProfile = createAsyncThunk<Profile, void, { state: RootState }>(
 	}
 );
 
-export const userSlice = createSlice({
+const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
